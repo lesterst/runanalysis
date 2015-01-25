@@ -1,6 +1,7 @@
 These are the column names used for the final data frame and summary information.
 The first two are from the subject and Y tables respectively.
 The rest are the mean and standard deviation based columns from the main X tables.
+It is the mean of each of those columns that is reported in the summary data table.
 
 
 
