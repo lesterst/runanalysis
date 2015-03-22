@@ -43,11 +43,11 @@ combined_all <- rbind(combined_test_withsource,combined_train_withsource)
 combined_mean_or_std <- select(combined_all, subjectcolumn, Ycolumn, contains("std"), contains("mean"))
 
 ## make user friendly activity names
-combo_with_activities <- merge(combined_mean_or_std,activity_lables, by.x = "Ycolumn", by.y = "V1")
+combo_with_activities <- merge(combined_mean_or_std,activity_labels, by.x = "Ycolumn", by.y = "V1")
 combo_with_activities2 <- rename(combo_with_activities, activity = V2)
 
 ## group by subject (30) and activity (6) into 180 subgroups
-grouped_combo <- group_by(combo_with_activities2,subjectcolumn,activity))
+grouped_combo <- group_by(combo_with_activities2,subjectcolumn,activity)
 
 ## use the summarise_each function to get the mean of each of the 180 subgroups
 sumall <- summarise_each(grouped_combo, funs(mean))
